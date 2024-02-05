@@ -15,8 +15,12 @@ SetWorkingDir, %A_ScriptDir%
 ;^-- auto-execute section "toprow"----------------------------------------------------------------
 ;v-- method implementations ---------------------------------------------------------------
 
+<<<<<<< HEAD
 #include modular\getExtension.ahk
 #include modular\activeExplorerPath.ahk
+=======
+;#include modular\activeExplorerPath.ahk
+>>>>>>> bautohotkey
 #include modular\afp.ahk
 
 ;MethodCalls;-------------------------------------------------------------------------------
@@ -48,6 +52,7 @@ CheckIfRunning("D:\PortableApps\3. Clipboard\PortableApps\DittoPortable\DittoAut
 #include modular\reloadScript.ahk
 !+r::reloadScript()
 
+<<<<<<< HEAD
 ;doesn't work
 #include modular\pShellAtCurrent.ahk
 #t::pShellAtCurrent()
@@ -56,6 +61,11 @@ CheckIfRunning("D:\PortableApps\3. Clipboard\PortableApps\DittoPortable\DittoAut
 
 
 ;shift+win+E to kill windows
+=======
+
+
+;shift+win+E to kill explorer
+>>>>>>> bautohotkey
 #+e::
    Run, taskkill.exe /im explorer.exe /f
 Return
@@ -76,9 +86,12 @@ Send, {Rbutton}
 #include modular\pasteAsFile.ahk
 ^+v::pasteAsFile()
 
+<<<<<<< HEAD
 
 
 
+=======
+>>>>>>> bautohotkey
 ;works
 #include modular\volumePageUpdown.ahk
 
@@ -92,22 +105,45 @@ Send, {Rbutton}
 
 ;works
 #Include modular\SavingReloades.ahk
+<<<<<<< HEAD
 #ifwinactive, AutoHotkey.ahk - Anteckningar
 	^s::SavingReloadsAhkWindow()
 #if
 
+=======
+#ifwinactive,* AutoHotkey.ahk - Notepad2
+	^s::SavingReloadsAhkWindow()
+#if
+
+#include modular\pushEnterUntil.ahk
+!+Enter::pushEnterUntil()
+
+;unsure/irrelevant
+
+;doesn't work
+#include modular\pShellAtCurrent.ahk
+#t::pShellAtCurrent()
+
+>>>>>>> bautohotkey
 ;not working, better use custom settings in program
 #include modular\altShiftEnter.ahk
 #ifwinactive, ahk_exe datagrip64.exe
     !F2::sendAltShiftEnter()
 #if
 
+<<<<<<< HEAD
+=======
+;does not work, but atleast prompts error
+#include modular\appendClippboard.ahk
+!+w::appendClipboard()
+>>>>>>> bautohotkey
 
 
 ;Work, could be reused as paste variable content
 #include modular\temp.ahk
 !+1::temp()
 
+<<<<<<< HEAD
 
 ;unsure/irrelevant
 
@@ -124,6 +160,11 @@ Send, {Rbutton}
 
 
 
+=======
+#include modular\altTab.ahk
+#include modular\refreshAhkWindow.ahk
+
+>>>>>>> bautohotkey
 #IfWinActive, MTGA
 Space::
 while not(GetKeyState("LButton"))
